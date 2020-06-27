@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "nodemon --exec babel-node src/server.js",
     "knex:seed": "knex  --knexfile knexfile.js seed:run",
     "knex:migrate": "knex --knexfile knexfile.js migrate:latest"
   },
@@ -13,9 +13,12 @@
   "dependencies": {
     "express": "^4.17.1",
     "knex": "^0.21.1",
+    "mysql": "^2.18.1",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "nodemon": "^2.0.4"
   }
 }
