@@ -1,12 +1,15 @@
-const knex = require('knex'); //importar o knex
-const path= require('path'); //path é utilizado para padronizar o uso de diretórios
-
+import knex from 'knex';
+import {DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER} from '../config/hostdatabase.json';
 
 const connection = knex({
     client: 'mysql',// banco utilizado -deve ser instalado o banco
-    connection:{
-        filename: path.resolve(__dirname,'database.sqlite'), //onde será armazenar o banco de dados
-    },
+    connection: {
+        host : DB_HOST,
+        user : DB_USER,
+        password : DB_PASSWORD,
+        database : DB_NAME,
+        port:DB_PORT
+  },
     useNullAsDefault : true,
 });
 
