@@ -89,10 +89,7 @@ export default class ClinicalSignalMeasurement {
                 measurement_type_id: m.type_id
             }));
             const insetedids = await trx('clinical_signals_measurements').insert(clinicalSignalsMeasurements);
-
-
-            //const deletedrows=  await trx('clinical_signals_measurements').truncate();
-            // console.log(deletedrows);
+            
             trx.commit();
 
             reponseJson.success.push({

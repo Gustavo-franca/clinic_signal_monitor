@@ -1,8 +1,11 @@
 const express = require('express');
 const routes = require('./routes');
 
+import {errors} from 'celebrate';
+
 const app = express();
 app.use(express.json());
+app.use(errors()) // lida com os erros encontrados com o celebrate 
 app.use(routes);//habilita o uso do arquivo routes
 
 // Temperatura
