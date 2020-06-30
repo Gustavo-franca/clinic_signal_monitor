@@ -1,5 +1,5 @@
-import knex from 'knex';
-import {DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER} from '../config/hostdatabase.json';
+const knex = require('knex');
+const {DB_HOST,DB_NAME,DB_PASSWORD,DB_PORT,DB_USER} = require('../config/hostdatabase.json');
 
 const connection = knex({
     client: 'mysql',// banco utilizado -deve ser instalado o banco
